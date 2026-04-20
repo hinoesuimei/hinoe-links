@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ひのえ — リンク一覧</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #fdf6ec 0%, #fbebd2 60%, #f5d9a8 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 60px;
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    /* 背景の太陽モチーフ */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,200,80,0.2) 0%, rgba(255,160,40,0.05) 50%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* プロフィールエリア */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #d4943a;
+      box-shadow: 0 4px 20px rgba(200,128,58,0.25);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-size: 22px;
+      font-weight: 600;
+      color: #3d2410;
+      letter-spacing: 4px;
+    }
+
+    .profile-name rt {
+      font-size: 10px;
+      font-weight: 300;
+      color: #8a6040;
+      letter-spacing: 1px;
+    }
+
+    .profile-sub {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: #8a6040;
+      letter-spacing: 2px;
+    }
+
+    .divider {
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c8803a, transparent);
+      margin: 4px 0;
+    }
+
+    /* リンクリスト */
+    .links {
+      width: 100%;
+      max-width: 380px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(200,128,58,0.25);
+      border-radius: 12px;
+      text-decoration: none;
+      color: #3d2410;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 10px rgba(200,128,58,0.08);
+    }
+
+    .link-btn:hover, .link-btn:active {
+      background: rgba(255,255,255,0.95);
+      border-color: #d4943a;
+      box-shadow: 0 4px 16px rgba(200,128,58,0.2);
+      transform: translateY(-1px);
+    }
+
+    .link-icon {
+      font-size: 22px;
+      width: 30px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .link-text {
+      flex: 1;
+    }
+
+    .link-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #3d2410;
+      letter-spacing: 1px;
+      line-height: 1.4;
+    }
+
+    .link-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      color: #8a6040;
+      margin-top: 2px;
+      letter-spacing: 0.5px;
+    }
+
+    .link-badge {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 9px;
+      color: #c8803a;
+      background: rgba(200,128,58,0.1);
+      border: 1px solid rgba(200,128,58,0.3);
+      padding: 2px 7px;
+      border-radius: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .link-arrow {
+      color: #c8803a;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* セクション区切り */
+    .section-label {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      color: #b09070;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    /* フッター */
+    footer {
+      margin-top: 48px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 10px;
+      color: #c8a070;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- プロフィール -->
+  <div class="profile">
+    <div class="avatar">
+      <img src="hinoe-icon.png" alt="ひのえ">
+    </div>
+    <div class="profile-name">
+      <ruby>朝生<rt>あそう</rt></ruby>ひのえ
+    </div>
+    <div class="divider"></div>
+    <div class="profile-sub">占い師 / 著者</div>
+  </div>
+
+  <!-- リンク一覧 -->
+  <div class="links">
+
+    <div class="section-label">— 書籍 —</div>
+
+    <a class="link-btn" href="https://amzn.to/4sF3icf" target="_blank" rel="noopener">
+      <span class="link-icon">📖</span>
+      <div class="link-text">
+        <div class="link-title">電子書籍「心に太陽を。」</div>
+        <div class="link-desc">Amazon で購入</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <div class="section-label">— 占いアプリ —</div>
+
+    <a class="link-btn" href="https://hinoesuimei.github.io/gokyo/" target="_blank" rel="noopener">
+      <span class="link-icon">🌿</span>
+      <div class="link-text">
+        <div class="link-title">五行思考タイプ診断</div>
+        <div class="link-desc">あなたの思考パターンを診断</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a class="link-btn" href="https://hinoesuimei.github.io/shichusumei-eki/" target="_blank" rel="noopener">
+      <span class="link-icon">☯</span>
+      <div class="link-text">
+        <div class="link-title">四柱推命 × 易</div>
+        <div class="link-desc">生年月日で命式を読み解く</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a class="link-btn" href="https://hinoesuimei.github.io/tarot-app/" target="_blank" rel="noopener">
+      <span class="link-icon">🔮</span>
+      <div class="link-text">
+        <div class="link-title">タロット大アルカナ × 五行</div>
+        <div class="link-desc">電子書籍特典アプリ</div>
+      </div>
+      <span class="link-badge">書籍特典</span>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <div class="section-label">— つながる —</div>
+
+    <a class="link-btn" href="https://lin.ee/9pyWqAU" target="_blank" rel="noopener">
+      <span class="link-icon">💬</span>
+      <div class="link-text">
+        <div class="link-title">LINE で相談する</div>
+        <div class="link-desc">お気軽にどうぞ</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+    <a class="link-btn" href="https://www.instagram.com/hinoe.suimei/" target="_blank" rel="noopener">
+      <span class="link-icon">📸</span>
+      <div class="link-text">
+        <div class="link-title">Instagram</div>
+        <div class="link-desc">@hinoe.suimei</div>
+      </div>
+      <span class="link-arrow">›</span>
+    </a>
+
+  </div>
+
+  <footer>hinoe © 2026</footer>
+
+</body>
+</html>
